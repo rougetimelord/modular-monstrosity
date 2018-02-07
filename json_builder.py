@@ -7,9 +7,9 @@ URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTeYoWsTDrgykb-_xR6Z0U3ID
 REQ = urllib.request.Request(URL)
 RES = urllib.request.urlopen(REQ)
 RES_DATA = RES.read().decode('utf-8').replace('\r','')
-HASH = hashlib.sha256(RES_DATA.encode('utf-8')).hexdigest()
-DICT = {'hash': HASH[:20]}
-with open('data/latest_hash.txt', 'w') as h:
+HASH = hashlib.sha256(RES_DATA.encode('utf-8')).hexdigest()[:7]
+DICT = {'hash': HASH}
+with open('data/hash.txt', 'w') as h:
     h.write(HASH)
 with open('data/keyword.csv', 'w') as f:
     f.write(RES_DATA)
