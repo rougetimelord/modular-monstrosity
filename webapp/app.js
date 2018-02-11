@@ -22,6 +22,7 @@ var hash_check = function(){
         hash = xhr.response;
         console.log(hash);
         if(!_storage["data"]){
+            console.log("No cache")
             json_downloader();
             return
         }
