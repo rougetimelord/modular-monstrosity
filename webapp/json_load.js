@@ -1,16 +1,11 @@
-var _storage = window.localStorage, _json;
-
-var main = function(){
-    
-}
+var _storage = window.localStorage;
 
 var json_downloader = function(){
     let url = "../data/keywords.json", xhr = new XMLHttpRequest(), json_loader = () => {
         data = xhr.response;
-        _json = JSON.parse(data);
+        window.json = JSON.parse(data);
         _storage.setItem("data", data);
         console.log("JSON gotten");
-        main();
     };
     xhr.addEventListener("loadend", json_loader);
     xhr.open("GET", url);
@@ -26,24 +21,21 @@ var hash_check = function(){
             json_downloader();
             return
         }
-        _json = JSON.parse(_storage.getItem("data"));
-        if (_json["hash"] != hash){
+        window.json = JSON.parse(_storage.getItem("data"));
+        if (window.json["hash"] != hash){
             console.log("Cache miss")
             json_downloader();
         }
         else{
             console.log("Cache hit");
-            main();
             return
         }
     };
     xhr.addEventListener("loadend", hash_handler);
     xhr.open("GET", url);
     xhr.send();
-}
+};
 
-var bootloader = () => {
+(function(){
     hash_check();
-}
-
-document.addEventListener("load", bootloader);
+})();

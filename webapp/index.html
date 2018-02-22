@@ -1,14 +1,30 @@
-<head>
-    <script type="text/javascript" src="app.js"></script>
-</head>
-<body>
-    <div class="keyword text">keyword here</div>
-    <div class="input inline-block">
-        <input id="use" type="button" value="Use this keyword" class="d-green">
-        <input id="skp" type="button" value="Skip this keyword" class="d-red">
-        <div class="label">Pick a category</div>
-        <select>
-            <!--A bunch of option tags-->
-        </select>
-    </div>
-</body>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preload" href="json_load.js" as="script">
+        <link rel="preload" href="keyword_handler.js" as="script">
+        <link rel="preload" href="index.css" as="style">
+
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script type="text/javascript" src="json_load.js"></script>
+        <script type="text/javascript" src="keyword_handler.js"></script>
+    </head>
+    <body>
+        <div class="keyword text">
+            <div id="keyword-title"></div>
+            <div id="keyword-comment"></div>
+        </div>
+        <div class="input inline-block">
+            <input id="use" type="button" value="Use this keyword" class="d-green">
+            <input id="skp" type="button" value="Skip this keyword" class="d-red">
+        </div>
+        <br>
+        <div class="input inline-block">
+            <div class="label">Pick a category</div>
+            <select id="dropdown">
+                <!--A bunch of option tags-->
+            </select>
+            <input id="go" type="button" value="Get a keyword" class="l-blue">
+        </div>
+    </body>
+</html>
