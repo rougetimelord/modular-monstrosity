@@ -1,3 +1,61 @@
+*{
+    margin: 0; 
+    text-align: center;
+}
+
 .inline-block{
     display: inline-block;
+}
+
+.l-blue{
+    background-color: #0FF;
+}
+
+.l-blue:active{
+    background-color: #0AA;
+    outline: 0;
+}
+
+.d-blue{
+    background-color: #348;
+}
+
+.l-green{
+    background-color: #5F5;
+}
+
+.l-green:active{
+    background-color: #3C3;
+    outline: 0;
+}
+
+.l-red{
+    background-color: #F55;
+}
+
+.l-red:active{
+    background-color: #C22;
+    outline: 0;
+}
+
+#main{
+    height: 40%;
+    width: 65%;
+    margin: 25% 10% 0 10%;
+    padding: 5%;
+    border-radius: 5%;
+    word-wrap: break-word;
+}
+
+.text{
+    color: #FFF;
+    margin: .5em 0 .5em 0;
+}
+
+input[type=button], #dropdown{
+    padding: .5em;
+    border: 0 solid #FFF;
+    border-radius: 0 5px 0 5px;
+    box-shadow: 4px 4px #126;
+    outline: 0;
 }
